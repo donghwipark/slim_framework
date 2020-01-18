@@ -1,0 +1,8 @@
+{
+    "require": {
+        "slim/slim": "4.0.0-beta",
+        "slim/psr7": "^1.0",
+        "php-di/php-di": "^6.0",
+        "slim/twig-view": "^3.0"
+    }
+}
