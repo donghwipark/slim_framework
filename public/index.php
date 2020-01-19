@@ -58,5 +58,19 @@ $app->get('/about', function (Request $request, Response $response) {
 })
     ->setName('about');
 
+$app->get('/contact', function (Request $request, Response $response) {
+    return $this->get('view')->render($response, 'contact.twig', compact('users'));
+})
+    ->setName('contact');
+
+$app->post('/contact', function (Request $request, Response $response) {
+    $data = $request->getParsedBody();
+
+    $response->getBody()->write($data['name']);
+
+    return $response;
+})
+    ->setName('contact');
+
 // Running App
 $app->run();
