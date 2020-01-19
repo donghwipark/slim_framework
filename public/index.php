@@ -40,8 +40,23 @@ $app->add(TwigMiddleware::createFromContainer($app));
 
 // Routing
 $app->get('/', function (Request $request, Response $response) {
-    return $this->get('view')->render($response, 'home.twig');
-});
+    $users = [
+        'alex',
+        'billy',
+        'dale'
+    ];
+    return $this->get('view')->render($response, 'home.twig', compact('users'));
+})
+    ->setName('home');
+$app->get('/about', function (Request $request, Response $response) {
+    $users = [
+        'alex',
+        'billy',
+        'dale'
+    ];
+    return $this->get('view')->render($response, 'about.twig', compact('users'));
+})
+    ->setName('about');
 
 // Running App
 $app->run();

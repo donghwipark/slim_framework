@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .nav-active {
+                font-weight: 700;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <a href="{{ full_url_for('home') }}" class="{{ is_current_url('home') ? 'nav-active' : '' }}">Home</a>
+            </li>
+            <li>
+                <a href="{{ full_url_for('about') }}" class="{{ is_current_url('about') ? 'nav-active' : '' }}">About</a>
+            </li>
+        </ul>
+        {% block content %}{% endblock %}
+    </body>
+</html>
